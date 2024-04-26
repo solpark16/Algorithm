@@ -1,0 +1,1 @@
+solution = (n) => [...String(n)].reverse().map(Number)
