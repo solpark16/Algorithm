@@ -1,10 +1,10 @@
 function solution(sizes) {
-    var w_max =[];
-    var h_max =[];
-    for(var i=0; i < sizes.length ; i++){
-        sizes[i].sort((a,b) => b-a);
-        w_max.push(sizes[i][0]);
-        h_max.push(sizes[i][1]);
-    }
-    return Math.max(...w_max)*Math.max(...h_max);
+    let maxW = 0;
+    let maxH = 0;
+    let arr = sizes.forEach((item) => {
+      item.sort((a,b)=>a-b);
+      if (item[0] > maxW) maxW = item[0];
+      if (item[1] > maxH) maxH = item[1];
+    });
+    return maxW*maxH;
 }
