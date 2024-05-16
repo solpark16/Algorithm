@@ -5,11 +5,10 @@ function solution(X, Y) {
     for (let i = 0; i< 10; i++){
         let lengthX = arrX.filter((num)=>Number(num)===i).length;
         let lengthY = arrY.filter((num)=>Number(num)===i).length;
-        if (lengthX > 0 || lengthX > 0 ){
+        if (lengthX > 0 && lengthY > 0 ){
             result += String(i).repeat(Math.min(lengthX,lengthY));
         }
     }
-    
     if (result.length === 0){
         return "-1";
     } else if (result.replaceAll("0","")===""){
