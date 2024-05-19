@@ -1,5 +1,5 @@
 function solution(keymap, targets) {
-  let result = targets.map((target) => {
+  return targets.map((target) => {
     let targetArr = [...target];
     let countSum = 0;
     for (let i = 0; i < targetArr.length; i++) {
@@ -11,13 +11,9 @@ function solution(keymap, targets) {
             }
         }
       }
-      if (count === 0) {
-        return -1;
-      } else {
-        countSum += count;
-      }
+      if (count === 0) return -1;
+      else countSum += count;
     }
     return countSum;
   });
-  return result;
 }
