@@ -3,13 +3,14 @@ function solution(d, budget) {
   let result = 0;
   const sortedD = d.sort((a, b) => a - b);
 
-  sortedD.forEach((price) => {
-    if (total + price <= budget) {
-      total += price;
+  for (let i = 0; i < sortedD.length; i++) {
+    if (total + sortedD[i] <= budget) {
+      total += sortedD[i];
       result++;
     } else {
-      return false;
+      break;
     }
-  });
+  }
+
   return result;
 }
