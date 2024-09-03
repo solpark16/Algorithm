@@ -1,15 +1,10 @@
 function solution(n, arr1, arr2) {
-  const binaryArr1 = arr1.map((el) => {
-    return el.toString(2).padStart(n, "0");
-  });
-  const binaryArr2 = arr2.map((el) => {
-    return el.toString(2).padStart(n, "0");
-  });
-  const result = binaryArr1.map((el, idx) => {
-    let newEl = [];
-    const binaryArr2El = binaryArr2[idx];
-    for (let i = 0; i < el.length; i++) {
-      if (el[i] === "1" || binaryArr2El[i] === "1") {
+  return arr1.map((el, idx) => {
+    const newEl = [];
+    const el1 = el.toString(2).padStart(n, "0");
+    const el2 = arr2[idx].toString(2).padStart(n, "0");
+    for (let i = 0; i < el1.length; i++) {
+      if (el1[i] === "1" || el2[i] === "1") {
         newEl.push("#");
       } else {
         newEl.push(" ");
@@ -17,5 +12,4 @@ function solution(n, arr1, arr2) {
     }
     return newEl.join("");
   });
-  return result;
 }
