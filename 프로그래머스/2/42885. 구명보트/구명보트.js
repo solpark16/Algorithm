@@ -4,7 +4,7 @@ function solution(people, limit) {
   for (let i = 0; i < people.length; i++) {
     num++;
     if (people[i] + people[people.length - 1] <= limit) {
-      people.splice(people.length - 1, 1);
+      people.pop();
     }
   }
   return num;
