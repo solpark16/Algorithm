@@ -1,7 +1,8 @@
 function solution(num_list) {
-  const arr = [0, 0];
+  let even = 0;
+  let odd = 0;
   for (let i = 0; i < num_list.length; i++) {
-    i % 2 === 0 ? (arr[0] += num_list[i]) : (arr[1] += num_list[i]);
+    i % 2 ? (odd += num_list[i]) : (even += num_list[i]);
   }
-  return Math.max(...arr);
+  return even > odd ? even : odd;
 }
