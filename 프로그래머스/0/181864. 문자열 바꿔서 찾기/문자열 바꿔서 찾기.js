@@ -1,12 +1,6 @@
 function solution(myString, pat) {
   return [...myString]
-    .map((el) => {
-      if (el === "A") {
-        return "B";
-      } else {
-        return "A";
-      }
-    })
+    .map((el) => (el === "A" ? "B" : "A"))
     .join("")
     .includes(pat)
     ? 1
