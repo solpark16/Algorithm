@@ -1,5 +1,5 @@
 function solution(hp) {
-    var result = 0;
+    let result = 0;
     while (hp >= 1) {
         if (hp >= 5) {
             hp -= 5;
